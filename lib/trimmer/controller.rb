@@ -7,13 +7,14 @@ require 'i18n'
 module Trimmer
 
   class Controller
-    attr_accessor :templates_path, :allowed_keys
+    attr_accessor :templates_path, :allowed_keys, :renderer_scope
 
     def initialize(app, opts={})
       @app = app
 
       @templates_path = opts[:templates_path] || File.expand_path(File.dirname(__FILE__))
       @allowed_keys = opts[:allowed_keys] || "*"
+      @renderer_scope = opts[:renderer_scope] || Object.new
     end
 
     # Handle trimmer routes
@@ -64,7 +65,7 @@ module Trimmer
     def render_to_string(path, opts={})
       template = Thread.current[:"#{path}"] || Thread.current[:"#{path}"] = Tilt.new(path, opts)
       ::I18n.with_exception_handler(:raise_all_exceptions) do
-        template.render
+        template.render(renderer_scope)
       end
     end
 
