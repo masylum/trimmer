@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name        = "trimmer"
   s.version     = Trimmer::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Pablo Villable", "Saimon Moore"]
+  s.authors     = ["Pablo Villalba", "Saimon Moore"]
   s.email       = ["pablo@teambox.com", "saimon@teambox.com"]
   s.homepage    = "https://github.com/teambox/trimmer"
   s.summary = %q{Rack endpoint to make templates and i18n translations available in javascript}
