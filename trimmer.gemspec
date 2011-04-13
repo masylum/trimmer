@@ -8,9 +8,8 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Pablo Villable", "Saimon Moore"]
   s.email       = ["pablo@teambox.com", "saimon@teambox.com"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.homepage    = "https://github.com/teambox/trimmer"
+  s.summary = %q{Rack endpoint to make templates and i18n translations available in javascript}
 
   s.rubyforge_project = "trimmer"
 
