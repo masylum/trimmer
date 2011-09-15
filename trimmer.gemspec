@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.add_dependency 'rack', '~> 1.1'
   s.add_dependency 'i18n', '~> 0.6.0'
-  s.add_dependency 'tilt', '~> 1.2.2'
+  s.add_dependency 'tilt', '~> 1.3.3'
   s.add_development_dependency 'test-spec', '~> 0.9.0'
   s.add_development_dependency 'haml', '~> 3.0.25'
   s.add_development_dependency 'json', '~> 1.1'
