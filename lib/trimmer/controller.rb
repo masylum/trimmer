@@ -63,7 +63,12 @@ module Trimmer
 
     #Render a template (using Tilt)
     def render_to_string(path, opts={})
-      template = Thread.current[:"#{path}"] || Thread.current[:"#{path}"] = Tilt.new(path, opts)
+      if ENV['RACK_ENV'] == 'production'
+        template = Thread.current[:"#{path}"] || Thread.current[:"#{path}"] = Tilt.new(path, opts)
+      else
+        template = Tilt.new(path, opts)
+      end
+
       ::I18n.with_exception_handler(:raise_all_exceptions) do
         template.render(renderer_scope)
       end
