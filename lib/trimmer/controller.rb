@@ -58,7 +58,7 @@ module Trimmer
       response = translations_to_js(opts)
       response << "\n"
       response << templates_to_js(locale)
-      [200, {'Content-Type' => 'text/javascript'}, response]
+      [200, {'Content-Type' => 'text/javascript'}, [response]]
     end
 
     #Render a template (using Tilt)
