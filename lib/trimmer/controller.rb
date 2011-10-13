@@ -70,7 +70,8 @@ module Trimmer
       end
 
       ::I18n.with_exception_handler(:raise_all_exceptions) do
-        template.render(renderer_scope).force_encoding("utf-8")
+        string = template.render(renderer_scope)
+        string.respond_to?(:force_encoding) ? string.force_encoding("utf-8") : string
       end
     end
 
