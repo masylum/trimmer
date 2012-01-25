@@ -4,7 +4,7 @@ module Trimmer
   module I18n
 
     def raise_all_exceptions(*args)
-      raise args.first
+      raise args.first.to_exception
     end
 
     def with_exception_handler(tmp_exception_handler = nil)
