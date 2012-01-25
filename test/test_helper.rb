@@ -48,6 +48,10 @@ class Test::Unit::TestCase
     File.dirname(__FILE__) + '/test_data/templates_missing_t'
   end
 
+  def complex_templates_dir
+    File.dirname(__FILE__) + '/test_data/complex_templates'
+  end
+
 end
 
 

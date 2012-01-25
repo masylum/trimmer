@@ -27,6 +27,10 @@ VALUE
 Templates = ({"foo":{"bar":"<span>trimmer</span>\\n"}});
 VALUE
 
+    @def_complex_templates_en = <<-VALUE.strip
+Templates = ({"bar":{"deportes":"ES UN BAR\\n"},"foo":{"manchu":"ES UN CHINO\\n","mar":"ES MALO\\n"}});
+VALUE
+
     @def_resources_es = <<-VALUE.strip
 if(typeof(I18n) == 'undefined') { I18n = {}; };
 I18n.translations = ({\"foo\":{\"trimmer\":\"recortadora\"}});
@@ -156,5 +160,8 @@ RESP
     end
   end
 
+  specify "should return templates in alphabetical order" do
+    request(:path=>'/trimmer/en/templates.js', :templates_dir => complex_templates_dir).body.should.equal(@def_complex_templates_en)
+  end
 end
 

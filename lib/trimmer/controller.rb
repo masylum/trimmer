@@ -3,6 +3,7 @@ require 'rack/request'
 require 'json'
 require 'tilt'
 require 'i18n'
+require 'active_support/ordered_hash'
 
 module Trimmer
 
@@ -101,7 +102,7 @@ module Trimmer
           end
         end
       end
-      templates
+      ActiveSupport::OrderedHash[templates.sort]
     end
 
     # Dumps all the translations. Options you can pass:
